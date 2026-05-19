@@ -26,10 +26,10 @@ jobs:
           cd epg
           npm install
 
-      - name: Generate EPG (XMLTV)
-        run: |
-          cd epg
-          npm run grab -- site=tvtv.us lang=en output=../guide.xml
+      - name: Generate EPG
+  run: |
+    cd epg
+    node scripts/commands/epg/grab.js --site=tvtv.us --lang=en --output=../guide.xml
 
       - name: Commit and push guide.xml
         run: |
